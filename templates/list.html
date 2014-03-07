@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>List of recent abductions </h1>
+<table>
+  <tr><th>DATE</th><th>NAME</th><th>LOCATION</th></tr>
+   {% for entry in abductions %} 
+  <tr><td>{{entry['whenDate']}}</td><td>{{entry['firstname']}} {{entry['lastname']}}</td>
+    <td>{{entry['city']}}, {{entry['state']}}</td></tr> 
+ {% endfor %}
+</table>
+{% endblock %}​
