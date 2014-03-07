@@ -7,7 +7,7 @@ html
 
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F0EFE2 url(background.png) repeat;
+  background: #C3E5ED url(background.png) repeat;
   color: #777;}
 
 p
@@ -19,19 +19,19 @@ img
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 175% 'century gothic', arial, sans-serif;
-  color: #068900;
+  color: #0B0B61;
   margin: 0 0 15px 0;
   padding: 15px 0 5px 0;}
 
 h2
 { font: normal 175% 'century gothic', arial, sans-serif;
-  color: #068900;}
+  color: #0B0B61;}
 
 h4, h5, h6
 { margin: 0;
   padding: 0 0 5px 0;
   font: normal 120% arial, sans-serif;
-  color: #068900;}
+  color: #0B0B61;}
 
 h5, h6
 { font: italic 95% arial, sans-serif;
@@ -44,7 +44,7 @@ h6
 a, a:hover
 { outline: none;
   text-decoration: underline;
-  color: #FD5BFF;}
+  color: #2E2EFE;}
 
 a:hover
 { text-decoration: none;}
@@ -114,7 +114,7 @@ ol li
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
-{ color: #068900;}
+{ color: #0B0B61;}
 
 #logo_text h2
 { font-size: 100%;
@@ -150,7 +150,7 @@ ul#menu li a
 
 ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 { color: #FFF;
-  background: #068900;}
+  background: #0B0B61;}
 
 #site_content
 { width: 837px;
@@ -255,7 +255,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   height: 33px;
   padding: 2px 0 3px 0;
   cursor: pointer; 
-  background: #068900; 
+  background: #0B0B61; 
   color: #FFF;}
 
 .form_settings textarea, .form_settings select
@@ -289,6 +289,6 @@ table tr th, table tr td
   text-align: left;}
   
 table tr td
-{ background: #F0EFE2;
+{ background: #C3E5ED;
   color: #47433F;
   border-top: 1px solid #FFF;}

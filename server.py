@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
-import utils
+from flask import Flask
 app = Flask(__name__)
+	
 
 @app.route('/')
 def mainIndex():

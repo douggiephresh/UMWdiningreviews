@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Aliens</title>
+  <title>UMWDiningReviews</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
@@ -14,8 +14,8 @@
     <div id="header">
       <div id="logo">
         <!-- class="logo_colour", allows you to change the colour of the text -->
-        <h1><a href="/"><span class="logo_colour"> Alien Abductions {{selectedMenu}}</span></a></h1>
-        <h2>Worldwide Site for Alien Abductions</h2>
+        <h1><a href="/"><span class="logo_colour"> UMW Dining Reviews {{selectedMenu}}</span></a></h1>
+        <h2>Woodstock, the Nest, and Seacobeck</h2>
       </div>
       <div id="menubar">
         <ul id="menu">
@@ -23,8 +23,11 @@
           <li  {% if selectedMenu == "Home" %} class="selected" {% endif %}  >
             <a href="/">Home</a></li>
           <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
-            <a href="/report">Report an Abduction</a></li>
-          <li><a href="/todo">See List of Abductions</a></li>
+            <a href="/report">Reviews</a></li>
+          <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
+	    <a href="/list">Descriptions</a></li>
+	  <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
+	    <a href="/list">Menus</a></li>
           
         </ul>
       </div>
@@ -32,15 +35,15 @@
     <div id="site_content">
       <div class="sidebar">
         <h1>Latest News</h1>
-        <h4>Alien Base on Moon</h4>
-        <h5>January 21st, 2014</h5>
-        <p>A mysterious object in a 90 degree angle featuring seven lighted dots has been spotted on the Moon's surface. <br /><a href="http://www.ibtimes.co.in/articles/535298/20140121/ufo-spotted-moon-surface-videos-alien-base.htm">Read more</a></p>
+        <h4>Title</h4>
+        <h5>Date</h5>
+        <p>Description <br /><a href="http://www.google.com">Link</a></p>
         <h1>Useful Links</h1>
         <ul>
-          <li><a href="http://www.ufocasebook.com/alienabductions.html">UFO Casebook</a></li>
-          <li><a href="http://www.alien-ufos.com/">Alien UFO</a></li>
-          <li><a href="http://www.coasttocoastam.com/">George Noory</a></li>
-          <li><a href="http://openseti.org/Hall.html">Open SETI</a></li>
+          <li><a href="http://umwdining.com/">UMW Dining Home</a></li>
+          <li><a href="http://umwdining.com/locations/nest.html">The Nest</a></li>
+          <li><a href="http://umwdining.com/locations/woodstock.html">Naturally Woodstock</a></li>
+          <li><a href="http://www.umwdining.com/locations/index.html">Seacobeck</a></li>
         </ul>
         <h1>Search</h1>
         <form method="post" action="#" id="search_form">
