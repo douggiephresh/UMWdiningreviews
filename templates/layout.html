@@ -22,12 +22,14 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li  {% if selectedMenu == "Home" %} class="selected" {% endif %}  >
             <a href="/">Home</a></li>
-          <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
-            <a href="/report">Reviews</a></li>
-          <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
-	    <a href="/list">Descriptions</a></li>
-	  <li  {% if selectedMenu == "Report" %} class="selected" {% endif %}  >
-	    <a href="/list">Menus</a></li>
+          <li  {% if selectedMenu == "Reviews" %} class="selected" {% endif %}  >
+            <a href="/reviews.html">Reviews</a></li>
+          <li  {% if selectedMenu == "Descriptions" %} class="selected" {% endif %}  >
+	    <a href="/descriptions.html">Descriptions</a></li>
+	  <li  {% if selectedMenu == "Menus" %} class="selected" {% endif %}  >
+	    <a href="/menus.html">Menus</a></li>
+	  <li  {% if selectedMenu == "Contact Us" %} class="selected" {% endif %}  >
+	    <a href="/contact.html">Contact Us</a></li>
           
         </ul>
       </div>
@@ -45,12 +47,13 @@
           <li><a href="http://umwdining.com/locations/woodstock.html">Naturally Woodstock</a></li>
           <li><a href="http://www.umwdining.com/locations/index.html">Seacobeck</a></li>
         </ul>
+<!-- 
         <h1>Search</h1>
         <form method="post" action="#" id="search_form">
           <p>
             <input class="search" type="text" name="search_field" value="Enter keywords....." />
             <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="{{ url_for('static', filename='img/search.png') }}" alt="Search" title="Search" />
-          </p>
+          </p> -->
         </form>
       </div>
       <div id="content">
@@ -58,7 +61,7 @@
       </div>
     </div>
     <div id="footer">
-      <p><a href="/">Home</a> | <a href="/report">Report an abduction</a> | <a href="contact.html">Contact Us</a></p>
+      <p><a href="/">Home</a> | <a href="/reviews.html">Reviews</a> | <a href="/contact.html">Contact Us</a></p>
       <p>Copyright &copy; simple_light | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
     </div>
   </div>

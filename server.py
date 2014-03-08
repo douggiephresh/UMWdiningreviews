@@ -7,21 +7,21 @@ app = Flask(__name__)
 def mainIndex():
     return render_template('index.html', selected='Home')
 
-@app.route('/examples.html')
-def examples():
-    return render_template('examples.html', selected='Examples')
+@app.route('/reviews.html')
+def reviews():
+    return render_template('reviews.html', selected='Reviews')
 
-@app.route('/contact.html')
+@app.route('/descriptions.html')
 def contact():
-    return render_template('contact.html', selectedMenu='Contact US')
+    return render_template('descriptions.html', selectedMenu='Descriptions')
 
-@app.route('/page.html')
+@app.route('/menus.html')
 def page():
-    return render_template('page.html', selectedMenu='A Page')
+    return render_template('menus.html', selectedMenu='Menus')
   
-@app.route('/another_page.html')
+@app.route('/contact.html')
 def another_page():
-    return render_template('another_page.html', selectedMenu='Another Page')
+    return render_template('contact.html', selectedMenu='Contact Us')
   
 if __name__ == '__main__':
   app.debug=True
