@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from flask import Flask
+import utils, MySQLUMWdiningDB
 app = Flask(__name__)
 	
 
@@ -9,7 +9,12 @@ def mainIndex():
 
 @app.route('/reviews.html')
 def reviews():
-    return render_template('reviews.html', selected='Reviews')
+    db = utils.db_connect()
+    cur = db.cursor(cursorclass=MySQLUMWdiningDB.cursors.DictCursor)
+    query = 'SELECT * from reviews'
+    cur.execute(query)
+    rows = cur.fetchall()
+    return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
 
 @app.route('/descriptions.html')
 def contact():
