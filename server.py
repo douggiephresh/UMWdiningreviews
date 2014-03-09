@@ -12,17 +12,21 @@ def mainIndex():
 @app.route('/review', methods=['POST'])
 def review():
  
-  r = {'Food': request.form['firstname'],
-               'Location': request.form['month'],
-               'Number': request.form['day'],
-               'Description': request.form['year']}
+  r = {'Food': request.form['Food'],
+               'Location': request.form['Location'],
+               'Number': request.form['Number'],
+               'Description': request.form['Description']}
                
    db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    query = INSERT INTO reviews VALUES (r.Food, r.Location, r.Number, r.Description);
+    print query
+    cur.execute(query)
     query = 'SELECT * from reviews'
     print query
     cur.execute(query)
-  return render_template('report2.html', abduction = abduction, selectedMenu='Todo')
+    rows = cur.fetchall()
+  return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
 
 
 @app.route('/reviews.html')
