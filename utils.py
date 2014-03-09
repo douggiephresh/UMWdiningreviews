@@ -1,6 +1,5 @@
 # utils.py
-import MySQLUMWdiningDB.sql
-
+import MySQLdb
 
 DATABASE='UMWdining'
 DB_USER = 'website'
