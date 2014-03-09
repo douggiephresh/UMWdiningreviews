@@ -9,6 +9,21 @@ app = Flask(__name__)
 def mainIndex():
     return render_template('index.html', selected='Home')
 
+@app.route('/review', methods=['POST'])
+def review():
+ 
+  r = {'Food': request.form['firstname'],
+               'Location': request.form['month'],
+               'Number': request.form['day'],
+               'Description': request.form['year']}
+               
+   db = utils.db_connect()
+    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    query = 'SELECT * from reviews'
+    print query
+    cur.execute(query)
+  return render_template('report2.html', abduction = abduction, selectedMenu='Todo')
+
 
 @app.route('/reviews.html')
 def reviews():
