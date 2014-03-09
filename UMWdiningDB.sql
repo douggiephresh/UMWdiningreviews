@@ -1,5 +1,6 @@
 DROP DATABASE UMWdining;
 
+
 CREATE DATABASE IF NOT EXISTS UMWdining;
 GRANT ALL PRIVILEGES ON UMWdining.* to 'website'@'localhost' 
 identified by 'umwdiningsecret';
