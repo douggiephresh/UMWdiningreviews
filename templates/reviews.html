@@ -3,7 +3,7 @@
 <h1>List of UMW Dining reviews </h1>
 <table>
   <tr><th>FOOD</th><th>LOCATION</th><th>RATING</th><th>Summary</th></tr>
-   {% for entry in abductions %} 
+   {% for entry in reviews %} 
   <tr><td>{{entry['food']}}</td><td>{{entry['locations']}}</td><td>{{entry['rating']}}</td><td>{{entry['summary']}}</td></tr> 
  {% endfor %}
 </table>

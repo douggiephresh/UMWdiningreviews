@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import MySQLdb
+import MySQLdb, MySQLdb.cursors 
 import utils
 
 app = Flask(__name__)
@@ -9,21 +9,22 @@ app = Flask(__name__)
 def mainIndex():
     return render_template('index.html', selected='Home')
 
-@app.route('/review', methods=['POST'])
+@app.route('/review.html')
 def review():
- 
+    return render_template('review.html')
+
+@app.route('/submit', methods=['POST'])
+def submit():
     r = {'Food': request.form['Food'],
                'Location': request.form['Location'],
                'Number': request.form['Number'],
-               'Description': request.form['Description']}
-               
+               'Description': request.form['Description']} 
     db = utils.db_connect()
-    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = 'INSERT INTO reviews VALUES (' + r.Food +',' + r.Location + ',' + r.Number + ',' + r.Description + ');'
-    print query
+    cur = db.cursor()
+    query = 'INSERT INTO reviews VALUES (\'' + r['Food'] + '\',\'' + r['Location'] + '\',' + r['Number'] + ',\'' + r['Description'] + '\');'
     cur.execute(query)
+    db.commit()
     query = 'SELECT * from reviews'
-    print query
     cur.execute(query)
     rows = cur.fetchall()
     return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
