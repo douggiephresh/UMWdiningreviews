@@ -2,9 +2,9 @@
 {% block content %}
 <h1>List of UMW Dining reviews </h1>
 <table>
-  <tr><th>LOCATION</th><th>ITEMS</th><th>
+  <tr><th>LOCATION</th><th>ITEMS</th></tr>
    {% for entry in menu %} 
-  <tr><td>{{entry['location']}}</td><td>{{entry['items']}}</td></tr>
+  <tr><td>{{entry['location']}}</td><td>{{entry['items']}}</td></tr> 
  {% endfor %}
 </table>
 {% endblock %}?
