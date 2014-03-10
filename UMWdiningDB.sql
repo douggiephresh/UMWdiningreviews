@@ -22,8 +22,8 @@ INSERT INTO reviews VALUES ('Omlette', 'Seacobeck', 9, 'Estelle makes the best o
 CREATE TABLE `Descriptions` (
 
 'Name' VARCHAR(35) NOT NULL,
-'Picture' BLOB,
-'Description' BLOB,
+'Picture' VARCHAR(255),
+'Description' VARCHAR(255),
 
 );
 
