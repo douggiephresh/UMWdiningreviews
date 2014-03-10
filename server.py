@@ -12,21 +12,21 @@ def mainIndex():
 @app.route('/review', methods=['POST'])
 def review():
  
-  r = {'Food': request.form['Food'],
+    r = {'Food': request.form['Food'],
                'Location': request.form['Location'],
                'Number': request.form['Number'],
                'Description': request.form['Description']}
                
-   db = utils.db_connect()
+    db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = INSERT INTO reviews VALUES (r.Food, r.Location, r.Number, r.Description);
+    query = 'INSERT INTO reviews VALUES (' + r.Food +',' + r.Location + ',' + r.Number + ',' + r.Description + ');'
     print query
     cur.execute(query)
     query = 'SELECT * from reviews'
     print query
     cur.execute(query)
     rows = cur.fetchall()
-  return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
+    return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
 
 
 @app.route('/reviews.html')
@@ -54,3 +54,4 @@ def another_page():
 if __name__ == '__main__':
   app.debug=True
   app.run(host='0.0.0.0', port=3000)
+
