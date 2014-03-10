@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-        <h1>Descriptions</h1>
-            					
-				<p>Here will be the Descriptions Table from the UMWdining database.</p>
+<h1>Restaraunts at UMW </h1>
+<table>
+  <tr><th>Name</th><th>Picture</th><th>Description</th></tr>
+   {% for entry in reviews %} 
+  <tr><td>{{entry['Name']}}</td><td>{{entry['Picture']}}</td><td>{{entry['Description']}}</td></tr> 
+ {% endfor %}
+</table>
 {% endblock %}
