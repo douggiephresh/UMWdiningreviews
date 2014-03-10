@@ -15,7 +15,6 @@ def reviews():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
     query = 'SELECT * from reviews'
-    print query
     cur.execute(query)
     rows = cur.fetchall()
     return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
