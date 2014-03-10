@@ -51,7 +51,13 @@ def contact():
 
 @app.route('/menus.html')
 def page():
-    return render_template('menus.html', selectedMenu='Menus')
+    db = utils.db_connect()
+    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    query = 'SELECT * from menu'
+    print query
+    cur.execute(query)
+    rows = cur.fetchall()
+    return render_template('menus.html', menu=rows, selectedMenu='Menus')
   
 @app.route('/contact.html')
 def another_page():

@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
-
 {% block content %}
-        <h1>Menus</h1>
-            					
-				<p>Here will be the Menus Table from the UMWdining database.</p>
-{% endblock %}
+<h1>List of UMW Dining reviews </h1>
+<table>
+  <tr><th>LOCATION</th><th>ITEMS</th><th>
+   {% for entry in menu %} 
+  <tr><td>{{entry['location']}}</td><td>{{entry['items']}}</td><td>
+ {% endfor %}
+</table>
+{% endblock %}?
