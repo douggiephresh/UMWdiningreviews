@@ -43,11 +43,11 @@ def reviews():
 def contact():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = 'SELECT * from Descriptions'
+    query = 'SELECT * from descriptions'
     print query
     cur.execute(query)
     rows = cur.fetchall()
-    return render_template('descriptions.html', reviews=rows, selectedMenu='Descriptions')
+    return render_template('descriptions.html', descriptions=rows, selectedMenu='Descriptions')
 
 @app.route('/menus.html')
 def page():

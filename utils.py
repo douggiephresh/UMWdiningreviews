@@ -1,7 +1,7 @@
 # utils.py
 import MySQLdb
 
-DATABASE='umwdining'
+DATABASE='UMWdining'
 DB_USER = 'website'
 DB_PASSWORD = 'umwdiningsecret'
 HOST = 'localhost'
