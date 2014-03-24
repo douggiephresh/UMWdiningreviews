@@ -1,52 +1,48 @@
 ﻿DROP DATABASE UMWdining;
 
-
 CREATE DATABASE IF NOT EXISTS UMWdining;
-GRANT ALL PRIVILEGES ON UMWdining.* to 'website'@'localhost' 
-identified by 'umwdiningsecret';
+GRANT ALL PRIVILEGES ON UMWdining.* to 'website'@'localhost' identified by 'umwdiningsecret';
 USE UMWdining;
 
-CREATE TABLE reviews
-(
-  reviewkey INT() NOT NULL AUTO_INCREMENT,
-  text BLOB(),
-  rating int NOT NULL,
-  PRIMARY KEY (reviewkey)
+
+
+CREATE TABLE IF NOT EXISTS reviews (
+	reviewkey int(11) NOT NULL AUTO_INCREMENT,
+	description VARCHAR(160),
+	rating int NOT NULL,
+	PRIMARY KEY (reviewkey)
 );
 
-CREATE TABLE review_food
-(
-  reviewkey INT(),
-  foodkey INT();
+
+CREATE TABLE IF NOT EXISTS foods (
+	foodkey int(11) NOT NULL AUTO_INCREMENT,
+	name varchar(25) NOT NULL,
+	description varchar(160),
+	PRIMARY KEY (foodkey)
 );
 
-CREATE TABLE foods
-(
-   foodkey INT() NOT NULL AUTO_INCREMENT
-   name VARCHAR(25) NOT NULL,
-   description BLOB(),
-   PRIMARY KEY (foodkey)
+
+CREATE TABLE IF NOT EXISTS locations  (
+	locationkey int (11) NOT NULL AUTO_INCREMENT,
+	name char (24) NOT NULL,
+	description VARCHAR(160),
+	image VARCHAR(160),
+	PRIMARY KEY (locationkey)
 );
 
-CREATE TABLE food_location
-(
-   foodkey INT(),
-   locationkey INT()
+
+CREATE TABLE IF NOT EXISTS review_food (
+	reviewkey int(11) NOT NULL AUTO_INCREMENT,
+	foodkey int(11),
+	FOREIGN KEY(reviewkey) REFERENCES reviews(reviewkey),
+	FOREIGN KEY(foodkey) REFERENCES foods(foodkey)
 );
 
-CREATE TABLE locations 
-(
-   locationkey INT () NOT NULL AUTO_INCREMENT,
-   name char (24) NOT NULL,
-   description BLOB (),
-   image BLOB (),
-   PRIMARY KEY (locationkey)
 
+CREATE TABLE IF NOT EXISTS food_location (
+	foodkey int(11),
+	locationkey int(11),
+	FOREIGN KEY (foodkey) REFERENCES foods(foodkey),
+	FOREIGN KEY(locationkey) REFERENCES locations(locationkey)
 );
-
-INSERT INTO reviews (1, 'The food was so gross', 2);
-INSERT INTO review_food (1, 1);
-INSERT INTO foods (1, 'Pizza', 'A cheese pizza');
-INSERT INTO food_location (1, 1);
-INSERT INTO locations (1, 'Vocellis', 'A tasty pizza service', '/location/file.jpeg');
 
