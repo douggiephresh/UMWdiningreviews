@@ -44,4 +44,9 @@ CREATE TABLE locations
 
 );
 
+INSERT INTO reviews (1, 'The food was so gross', 2);
+INSERT INTO review_food (1, 1);
+INSERT INTO foods (1, 'Pizza', 'A cheese pizza');
+INSERT INTO food_location (1, 1);
+INSERT INTO locations (1, 'Vocellis', 'A tasty pizza service', '/location/file.jpeg');
 
