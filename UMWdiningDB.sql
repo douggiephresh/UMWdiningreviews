@@ -46,3 +46,22 @@ CREATE TABLE IF NOT EXISTS food_location (
 	FOREIGN KEY(locationkey) REFERENCES locations(locationkey)
 );
 
+
+INSERT INTO reviews (reviewkey, description, rating) VALUES
+(1, 'This was a good slice of pizza', 5);
+
+INSERT INTO locations (locationkey, name, description, image) VALUES
+(1, 'Vocelli''s', 'The best pizza on campus!', '/blah/blah.jpeg');
+
+INSERT INTO foods (foodkey, name, description) VALUES
+(1, 'Cheese Pizza', 'Two hot slices of cheese pizza');
+
+INSERT INTO review_food (reviewkey, foodkey) VALUES
+(1, 1);
+
+INSERT INTO food_location (foodkey, locationkey) VALUES
+(1, 1);
+
+
+
+
