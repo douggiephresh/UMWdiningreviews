@@ -39,8 +39,8 @@ def reviews():
     rows = cur.fetchall()
     return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
 
-@app.route('/descriptions.html')
-def descriptions():
+@app.route('/locations.html')
+def locations():
     #db = utils.db_connect()
     #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
     #query = 'SELECT * from descriptions'
@@ -48,10 +48,10 @@ def descriptions():
     #cur.execute(query)
     #rows = cur.fetchall()
     #return render_template('descriptions.html', descriptions=rows, selectedMenu='Descriptions')
-    return render_template('descriptions.html', selectedMenu='Descriptions')
+    return render_template('locations.html', selectedMenu='Locations')
 
-@app.route('/menus.html') #need to change to foods!!
-def menus():
+@app.route('/foods.html') #need to change to foods!!
+def foods():
     #db = utils.db_connect()
     #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
     #query = 'SELECT * from menu'
@@ -59,7 +59,7 @@ def menus():
     #cur.execute(query)
     #rows = cur.fetchall()
     #return render_template('menus.html', menu=rows, selectedMenu='Menus')
-    return render_template('menus.html', selectedMenu='Menus')
+    return render_template('foods.html', selectedMenu='Foods')
 
 @app.route('/contact.html')
 def contact():

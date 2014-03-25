@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Restaraunts at UMW </h1>
+<!-- //This no longer works//
+<table>
+  <tr><th>Name</th><th>Picture</th><th>Description</th></tr>
+   {% for entry in descriptions %} 
+  <tr><td>{{entry['name']}}</td><td>{{entry['picture']}}</td><td>{{entry['description']}}</td></tr> 
+ {% endfor %}
+</table>
+-->
+{% endblock %}

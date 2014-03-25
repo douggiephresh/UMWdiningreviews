@@ -48,19 +48,36 @@ CREATE TABLE IF NOT EXISTS food_location (
 
 
 INSERT INTO reviews (reviewkey, description, rating) VALUES
-(1, 'This was a good slice of pizza', 5);
+(1, 'This was a good slice of pizza', 4),
+(2, 'The bread was a little stale', 2),
+(3, 'Wow! Those wings really were great!', 5),
+(4, 'I love red pepper gouda!', 5);
 
 INSERT INTO locations (locationkey, name, description, image) VALUES
-(1, 'Vocelli''s', 'The best pizza on campus!', '/blah/blah.jpeg');
+(1, 'Vocelli''s', 'The best pizza on campus!', '/blah/blah.jpeg'),
+(2, 'Joe Stacks', 'Hot and cold sandwiches and coffee.', '/blah/blah.jpeg'),
+(3, 'Woodstock', 'All natural and goood for you.', '/blah/blah.jpeg'),
+(4, 'Wow Wingery', 'Come try our wings!', '/blah/blah.jpeg');
 
 INSERT INTO foods (foodkey, name, description) VALUES
-(1, 'Cheese Pizza', 'Two hot slices of cheese pizza');
+(1, 'Cheese Pizza', 'Two hot slices of cheese pizza'),
+(2, 'Sandwich', 'One made to order sandwich.  Hot or cold.'),
+(3, 'Vocelli''s Rolls', 'Two bread sticks with pepperoni and cheese'),
+(4, 'Wings', 'Wings in any of our sauces with fries.'),
+(5, 'Soup', 'Hot bowl of soup with a choice of your side.');
 
 INSERT INTO review_food (reviewkey, foodkey) VALUES
-(1, 1);
+(1, 1),
+(2, 2),
+(3, 4),
+(4, 5);
 
 INSERT INTO food_location (foodkey, locationkey) VALUES
-(1, 1);
+(1, 1),
+(2, 2),
+(3, 1),
+(4, 4),
+(5, 3);
 
 
 
