@@ -2,9 +2,9 @@
 {% block content %}
 <h1>List of UMW Dining reviews </h1>
 <table>
-  <tr><th>FOOD</th><th>LOCATION</th><th>RATING</th><th>Summary</th></tr>
+  <tr><th>Food</th><th>Rating</th><th>Comments</th></tr>
    {% for entry in reviews %} 
-  <tr><td>{{entry['food']}}</td><td>{{entry['locations']}}</td><td>{{entry['rating']}}</td><td>{{entry['summary']}}</td></tr> 
+  <tr><td>{{entry['Food']}}</td><td>{{entry['Rating']}}</td><td>{{entry['Comments']}}</td></tr> 
  {% endfor %}
 </table>
 {% endblock %}​
