@@ -41,25 +41,23 @@ def reviews():
 
 @app.route('/locations.html')
 def locations():
-    #db = utils.db_connect()
-    #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    #query = 'SELECT * from descriptions'
-    #print query
-    #cur.execute(query)
-    #rows = cur.fetchall()
-    #return render_template('descriptions.html', descriptions=rows, selectedMenu='Descriptions')
-    return render_template('locations.html', selectedMenu='Locations')
+    db = utils.db_connect()
+    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    query = 'SELECT name, description FROM locations'
+    cur.execute(query)
+    rows = cur.fetchall()
+    return render_template('locations.html', locations=rows, selectedMenu='Locations')
 
 @app.route('/foods.html') #need to change to foods!!
 def foods():
-    #db = utils.db_connect()
-    #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    #query = 'SELECT * from menu'
-    #print query
-    #cur.execute(query)
-    #rows = cur.fetchall()
-    #return render_template('menus.html', menu=rows, selectedMenu='Menus')
-    return render_template('foods.html', selectedMenu='Foods')
+    db = utils.db_connect()
+    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    query = 'SELECT f.name Food, f.description Descriptions, l.name Location from foods f inner join food_location fl on fl.foodkey = f.foodkey inner join locations l on fl.locationkey = l.locationkey'
+    cur.execute(query)
+    rows = cur.fetchall()
+    print rows
+    return render_template('foods.html', foods=rows, selectedMenu='Foods')
+
 
 @app.route('/contact.html')
 def contact():
