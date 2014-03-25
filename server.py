@@ -40,28 +40,34 @@ def reviews():
     return render_template('reviews.html', reviews=rows, selectedMenu='Reviews')
 
 @app.route('/descriptions.html')
-def contact():
-    db = utils.db_connect()
-    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = 'SELECT * from descriptions'
-    print query
-    cur.execute(query)
-    rows = cur.fetchall()
-    return render_template('descriptions.html', descriptions=rows, selectedMenu='Descriptions')
+def descriptions():
+    #db = utils.db_connect()
+    #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    #query = 'SELECT * from descriptions'
+    #print query
+    #cur.execute(query)
+    #rows = cur.fetchall()
+    #return render_template('descriptions.html', descriptions=rows, selectedMenu='Descriptions')
+    return render_template('descriptions.html', selectedMenu='Descriptions')
 
-@app.route('/menus.html')
-def page():
-    db = utils.db_connect()
-    cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = 'SELECT * from menu'
-    print query
-    cur.execute(query)
-    rows = cur.fetchall()
-    return render_template('menus.html', menu=rows, selectedMenu='Menus')
-  
+@app.route('/menus.html') #need to change to foods!!
+def menus():
+    #db = utils.db_connect()
+    #cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+    #query = 'SELECT * from menu'
+    #print query
+    #cur.execute(query)
+    #rows = cur.fetchall()
+    #return render_template('menus.html', menu=rows, selectedMenu='Menus')
+    return render_template('menus.html', selectedMenu='Menus')
+
 @app.route('/contact.html')
-def another_page():
+def contact():
     return render_template('contact.html', selectedMenu='Contact Us')
+
+@app.route('/future.html')
+def future():
+    return render_template('future.html', selectedMenu='Future Plans')
   
 if __name__ == '__main__':
   app.debug=True
