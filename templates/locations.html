@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1>Restaraunts at UMW </h1>
-<table>
-  <tr><th>Name</th><th>Description</th></tr>
-   {% for entry in locations %} 
-  <tr><td>{{entry['name']}}</td><td>{{entry['description']}}</td></tr> 
+
+{% for entry in locations %} 
+<figure>
+  <h2> {{entry['name']}} </h2>
+  <img src = "{{entry['image']}}">
+  <br />
+  <figcaption> {{entry['description']}} </figcaption> 
+  </figure>
+<br />
  {% endfor %}
-</table>
-<t1>Eventually we plan to have images of the locations in our table</t1>
+
 {% endblock %}
