@@ -80,5 +80,12 @@ INSERT INTO food_location (foodkey, locationkey) VALUES
 (5, 3);
 
 
+CREATE VIEW reviewView AS 
+SELECT f.name Food, r.description Comments, r.rating Rating 
+from foods f 
+inner join review_food rf on rf.foodkey = f.foodkey 
+inner join reviews r on rf.reviewkey = r.reviewkey;
 
 
+ALTER TABLE locations
+ADD INDEX (name);
