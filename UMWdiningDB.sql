@@ -57,7 +57,8 @@ INSERT INTO locations (locationkey, name, description, image) VALUES
 (1, 'Vocelli''s', 'The best pizza on campus!', '/blah/blah.jpeg'),
 (2, 'Joe Stacks', 'Hot and cold sandwiches and coffee.', '/blah/blah.jpeg'),
 (3, 'Woodstock', 'All natural and goood for you.', '/blah/blah.jpeg'),
-(4, 'Wow Wingery', 'Come try our wings!', '/blah/blah.jpeg');
+(4, 'Wow Wingery', 'Come try our wings!', '/blah/blah.jpeg'),
+(5, 'Home Team', 'We love UMW students!', '/blah/blah.jpeg');
 
 INSERT INTO foods (foodkey, name, description) VALUES
 (1, 'Cheese Pizza', 'Two hot slices of cheese pizza'),

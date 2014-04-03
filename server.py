@@ -43,7 +43,7 @@ def reviews():
 def locations():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-    query = 'SELECT name, description, image FROM locations'
+    query = 'SELECT name, description, image FROM locations WHERE name <> \'Home Team\''
     cur.execute(query)
     rows = cur.fetchall()
     return render_template('locations.html', locations=rows, selectedMenu='Locations')
